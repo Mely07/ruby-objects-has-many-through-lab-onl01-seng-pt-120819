@@ -23,7 +23,7 @@ class Doctor
   end
   
   def patients 
-    appointments.map do |appointment|
+    appointments.map do |appointment| #same as self.appoint. (appoint. method) -- Ruby
       appointment.patient 
     end
   end
