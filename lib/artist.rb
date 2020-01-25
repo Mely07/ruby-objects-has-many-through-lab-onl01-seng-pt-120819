@@ -23,7 +23,7 @@ class Artist
   end
     
   def genres
-    songs.map do |song|
+    songs.map do |song| #same as self.songs -- Ruby does this automatically 
       song.genre 
     end
   end
