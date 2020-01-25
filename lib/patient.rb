@@ -24,7 +24,7 @@ class Patient
   
     
   def doctors
-    appointments.map do |appointment|
+    appointments.map do |appointment| #same as self.appoint. -- Ruby
       appointment.doctor
     end
   end
