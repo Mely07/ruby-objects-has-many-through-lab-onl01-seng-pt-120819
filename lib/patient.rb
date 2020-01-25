@@ -12,20 +12,20 @@ class Patient
     @@all
   end
   
-  def appointments 
-    Appointment.all.select do|appointment|
-      appointment.patient == self
-    end
+  def appointments #the patient is going to look at all of the appointments, and then select only the ones that belong to them, if they know the name of the doctor of their last visit they can leave them a good review. 
+      Appointment.all.select do |appointment|
+        appointment.patient == self
+      end
   end
   
-  def new_appointment(doctor, date) 
+  def new_appointment(doctor, date) #grants the/a patient the ability to create a new appointment. it automatically associates each new appointment with the patient that created it. 
     Appointment.new(date, self, doctor) 
   end
+  
     
   def doctors
     appointments.map do |appointment|
       appointment.doctor
     end
   end
-  
 end

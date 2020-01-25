@@ -14,11 +14,11 @@ class Doctor
   
   def appointments
     Appointment.all.select do |appointment|
-      appointment.doctor == self 
+      appointment.doctor == self #doctor checks for all of the appointment they have ever scheduled 
     end
   end
   
-  def new_appointment(patient, date)
+  def new_appointment(patient, date)#grants the/a doctor the ability to create a new appointment. it automatically associates each new appointment with the doctor. 
     Appointment.new(date, patient, self) 
   end
   
@@ -29,3 +29,4 @@ class Doctor
   end
 
 end
+
